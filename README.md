@@ -1,5 +1,5 @@
-Right Track Database (node-sqlite3)
-===================================
+Right Track Database (sqlite3)
+==============================
 
 This module provides an implementation of the _Right Track Database_ 
 using the [node-sqlite3](https://github.com/mapbox/node-sqlite3) module. 
