@@ -39,12 +39,9 @@ class RightTrackDB {
                 console.error("ERROR SELECTING RESULTS FROM DB");
                 console.error(statement);
                 console.error(err);
+                return callback(err);
             }
-            else {
-                if ( callback !== undefined ) {
-                    callback(rows);
-                }
-            }
+            return callback(null, rows);
         });
     }
 
@@ -59,16 +56,13 @@ class RightTrackDB {
                 console.error("ERROR SELECTING FIRST RESULT FROM DB");
                 console.error(statement);
                 console.error(err);
+                return callback(err);
             }
-            else {
-                if ( callback !== undefined ) {
-                    callback(row);
-                }
-            }
+            return callback(null, row);
         });
     }
 
-};
+}
 
 
 // ==== CALLBACK DEFINITIONS ==== //
@@ -77,14 +71,16 @@ class RightTrackDB {
  * This callback is performed after performing a SELECT query
  * that can return multiple rows.
  * @callback RightTrackDB~selectCallback
- * @param {object[]} rows Selected rows
+ * @param {Error} error Database Query Error
+ * @param {object[]} [rows] Selected rows
  */
 
 /**
  * This callback is performed after performing a SELECT query
  * that will return the first row.
  * @callback RightTrackDB~getCallback
- * @param {object} row First selected row
+ * @param {Error} error Database Query Error
+ * @param {object} [row] First selected row
  */
 
 
