@@ -51,14 +51,14 @@ class RightTrackDB {
   }
 
   /**
-   * Select a single row from the database.  This ensures that only a single
-   * row is selected.  It will return an error if 0 or more than 1 rows
-   * are returned.
+   * Select a single row from the database.  If no results are selected, this
+   * will return undefined.  If more than 1 results are selected it will
+   * return the first result.
    * @param {string} statement Select Statement
    * @param {RightTrackDB~getCallback} callback Get callback function
    */
   get(statement, callback) {
-    this.db.all(statement, function(err, rows) {
+    this.db.get(statement, function(err, row) {
 
       // SQLite ERROR
       if (err) {
@@ -68,22 +68,8 @@ class RightTrackDB {
         return callback(err);
       }
 
-      // No Result
-      if ( rows.length === 0 ) {
-        return callback(
-          new Error('No Result returned from select/get statement')
-        );
-      }
-
-      // Too many results
-      else if ( rows.length > 1 ) {
-        return callback(
-          new Error('More than 1 result returned from select/get statement')
-        );
-      }
-
       // Return Result
-      return callback(null, rows[0]);
+      return callback(null, row);
 
     });
   }
