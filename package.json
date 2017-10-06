@@ -1,7 +1,7 @@
 {
   "name": "right-track-db-sqlite3",
-  "version": "0.0.1",
-  "description": "The SQLite Interface for the Right Track Database",
+  "version": "1.0.0",
+  "description": "Right Track Database implementation using sqlite3",
   "author": "David Waring <dev@davidwaring.net>",
   "license": "MIT",
   "private": true,
@@ -10,7 +10,9 @@
     "docs": "jsdoc -c jsdoc.json --readme README.md --template $NODE_PATH/docdash"
   },
   "dependencies": {
-    "sqlite3": "^3.1.10"
+    "sqlite3": "^3.1.13"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jsdoc": "^3.5.5"
+  }
 }
