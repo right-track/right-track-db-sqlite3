@@ -1,6 +1,6 @@
 {
   "name": "right-track-db-sqlite3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Right Track Database implementation using sqlite3",
   "author": "David Waring <dev@davidwaring.net>",
   "license": "MIT",
