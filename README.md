@@ -1,17 +1,18 @@
 Right Track Database (sqlite3)
 ==============================
 
-This module provides an implementation of the **Right Track Database** 
-using the [node-sqlite3](https://github.com/mapbox/node-sqlite3) module. The 
-_RightTrackDB_ Class is used to query the SQLite database containing the GTFS 
-data and additional Right Track data for a transit agency.  The SQLite database 
-is generated using the **right-track-db-build** module.
+This Node module provides an implementation of the **Right Track Database** 
+Class using the [node-sqlite3](https://github.com/mapbox/node-sqlite3) module. This 
+Class is used to query the SQLite database containing the GTFS and additional 
+Right Track data.  The SQLite database is generated using the 
+[right-track-db-build](https://github.com/right-track/right-track-db-build) module.
 
 ### Implementation
 
 The _RightTrackDB_ Class must have the following methods:
 
 - **constructor(id, location)**
+    - this function sets up the SQLite database at the specified location.
     - **id:** the agency id
     - **location:** the path to the sqlite database
     
