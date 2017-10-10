@@ -1,20 +1,19 @@
 'use strict';
 
+const RightTrackDBTemplate = require('right-track-db-template');
 const sqlite3 = require('sqlite3');
 
-
 /**
- * Right Track Database Interface
+ * RightTrackDB Implementation
  * -------------------------------
- * This class is a wrapper for the SQLite functions
- * performed on the Right Track Database.
+ * This Class is an implementation of the abstract `RightTrackDB` Class.
  *
- * This interface implementation is using the sqlite3
- * module to perform all SQLite functions on the database.
+ * This implementation uses the node `sqlite3` module to provide the
+ * actual SQLite functionality.
  *
  * @class
  */
-class RightTrackDB {
+class RightTrackDB extends RightTrackDBTemplate {
 
   /**
    * Right Track Database Constructor
@@ -23,15 +22,15 @@ class RightTrackDB {
    * @param {string} location File path to the Right Track database
    */
   constructor(id, location) {
-    this.id = id;
-    this.location = location;
+    super(id, location);
     this.db = new sqlite3.Database(location);
   }
+
 
   /**
    * Select multiple rows from the database
    * @param {string} statement Select Statement
-   * @param {RightTrackDB~selectCallback} callback Select callback function
+   * @param {function} callback {@link RightTrackDB~selectCallback|selectCallback} callback function
    */
   select(statement, callback) {
     this.db.all(statement, function(err, rows) {
@@ -55,7 +54,7 @@ class RightTrackDB {
    * will return undefined.  If more than 1 results are selected it will
    * return the first result.
    * @param {string} statement Select Statement
-   * @param {RightTrackDB~getCallback} callback Get callback function
+   * @param {function} callback {@link RightTrackDB~getCallback|getCallback} callback function
    */
   get(statement, callback) {
     this.db.get(statement, function(err, row) {
@@ -94,7 +93,6 @@ class RightTrackDB {
  * @param {Error} error Database Query Error
  * @param {object} [row] First selected row
  */
-
 
 
 module.exports = RightTrackDB;
