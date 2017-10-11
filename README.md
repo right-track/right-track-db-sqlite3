@@ -1,33 +1,18 @@
 Right Track Database (sqlite3)
 ==============================
 
-This Node module provides an implementation of the **Right Track Database** 
+This Node module provides an implementation of the abstract [RightTrackDB](https://github.com/right-track/right-track-db-template) 
 Class using the [node-sqlite3](https://github.com/mapbox/node-sqlite3) module. This 
-Class is used to query the SQLite database containing the GTFS and additional 
-Right Track data.  The SQLite database is generated using the 
+Class is used to query the SQLite Right Track Database containing the GTFS and 
+additional Right Track data.  The SQLite database is generated using the 
 [right-track-db-build](https://github.com/right-track/right-track-db-build) module.
 
-### Implementation
+### Documentation
 
-The _RightTrackDB_ Class must have the following methods:
+For documentation on this implementation of `RightTrackDB`, see the **/doc/** 
+directory in this repository or online at [https://docs.righttrack.io/right-track-db-sqlite3](https://docs.righttrack.io/right-track-db-sqlite3).
 
-- **constructor(id, location)**
-    - this function sets up the SQLite database at the specified location.
-    - **id:** the agency id
-    - **location:** the path to the sqlite database
-    
-- **select(statement, callback)**
-    - this function performs a SELECT on the sqlite database and returns an 
-    array containing the selected rows
-    - **statement:** the full SQLite SELECT statement
-    - **callback(err, rows):** callback function accepting the array of results
-    
-- **get(statement, callback)**
-    - this function performs a SELECT on the sqlite database and returns an 
-    object containing the first of the selected rows.  If no rows are selected, 
-    then the row returned will be `undefined`.  If more than one row is selected, 
-    then the first row will be returned.
-    - **statement:** the full SQLite SELECT statement
-    - **callback(err, row):** callback function accepting the object of the first 
-    selected row
-     
+For documentation on the abstract `RightTrackDB` Class, see the source code 
+available at [https://github.com/right-track/right-track-db-template](https://github.com/right-track/right-track-db-template) 
+or its documentation at [https://docs.righttrack.io/right-track-db-template](https://docs.righttrack.io/right-track-db-template).
+ 
