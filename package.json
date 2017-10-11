@@ -1,19 +1,27 @@
 {
   "name": "right-track-db-sqlite3",
   "version": "1.1.0",
-  "description": "Right Track Database implementation using sqlite3",
-  "author": "David Waring <dev@davidwaring.net>",
+  "description": "Right Track Database: sqlite3",
+  "author": "David Waring <dev@davidwaring.net> (https://davidwaring.net)",
   "license": "MIT",
-  "private": true,
   "main": "src/index.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json --readme README.md --template $NODE_PATH/docdash"
   },
   "dependencies": {
-    "right-track-db-template": "^1.0.0",
+    "right-track-db-abstract": "^1.1.0",
     "sqlite3": "^3.1.13"
   },
   "devDependencies": {
     "jsdoc": "^3.5.5"
+  },
+  "homepage": "https://righttrack.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/right-track/right-track-db-sqlite3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/right-track/right-track-db-sqlite3/issues",
+    "email": "dev@davidwaring.net"
   }
 }
