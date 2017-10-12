@@ -1,6 +1,6 @@
 'use strict';
 
-const RightTrackDBTemplate = require('right-track-db-template');
+const RightTrackDBTemplate = require('right-track-db');
 const sqlite3 = require('sqlite3');
 
 /**
