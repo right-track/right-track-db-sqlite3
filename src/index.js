@@ -18,12 +18,11 @@ class RightTrackDB extends RightTrackDBTemplate {
   /**
    * Right Track Database Constructor
    * @constructor
-   * @param {string} id Agency ID
-   * @param {string} location File path to the Right Track database
+   * @param {RightTrackAgency} agency The Right Track Agency this DB will be used to query
    */
-  constructor(id, location) {
-    super(id, location);
-    this.db = new sqlite3.Database(location);
+  constructor(agency) {
+    super(agency);
+    this.db = new sqlite3.Database(this.location);
   }
 
 
