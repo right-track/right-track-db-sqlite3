@@ -1,7 +1,8 @@
 Right Track Database (sqlite3)
 ==============================
 
-#### node module: [right-track-db-sqlite3]((https://www.npmjs.com/package/right-track-db-sqlite3)
+**node module:** [right-track-db-sqlite3](https://www.npmjs.com/package/right-track-db-sqlite3)  
+**GitHub repo:** [right-track/right-track-db-sqlite3](https://github.com/right-track/right-track-db-sqlite3)
 
 ---
 
