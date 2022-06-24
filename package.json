@@ -9,7 +9,7 @@
     "docs": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
-    "right-track-core": "github:right-track/right-track-core",
+    "right-track-core": "right-track/right-track-core",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
